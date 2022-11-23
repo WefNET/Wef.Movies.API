@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wef.Movies.API", "Wef.Movies.API\Wef.Movies.API.csproj", "{5A8CA3B1-E4D3-450A-9670-2517247B5BB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wef.Movies.Tests", "Wef.Movies.Tests\Wef.Movies.Tests.csproj", "{CCD5C55F-E0F9-4C12-A754-C4E831E29CEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A8CA3B1-E4D3-450A-9670-2517247B5BB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A8CA3B1-E4D3-450A-9670-2517247B5BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A8CA3B1-E4D3-450A-9670-2517247B5BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A8CA3B1-E4D3-450A-9670-2517247B5BB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCD5C55F-E0F9-4C12-A754-C4E831E29CEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCD5C55F-E0F9-4C12-A754-C4E831E29CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCD5C55F-E0F9-4C12-A754-C4E831E29CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCD5C55F-E0F9-4C12-A754-C4E831E29CEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

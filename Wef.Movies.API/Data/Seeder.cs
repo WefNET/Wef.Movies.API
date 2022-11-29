@@ -50,6 +50,7 @@ namespace Wef.Movies.API.Data
             // Movies
 
             var actorsOne = context.Actors.Where(a => a.ActorId == 1 || a.ActorId == 2 || a.ActorId == 3).ToList();
+            var actorsTwo = context.Actors.Where(a => a.ActorId == 4 || a.ActorId == 5).ToList();
 
             var bridesmaids = new Movie
             {
@@ -58,21 +59,16 @@ namespace Wef.Movies.API.Data
                 Actors = actorsOne
             };
 
-            ////var newClown = new Clown();
+            context.Movies.Add(bridesmaids);
 
+            var weddingCrashers = new Movie
+            {
+                MovieId = 2,
+                Title = "Wedding Crashers",
+                Actors = actorsTwo
+            };
 
-            //context.Entry(bridesmaids).State = EntityState.Unchanged;
-
-            ////db.Entry(car).State = EntityState.Unchanged;
-
-            //bridesmaids.Actors.AddRange(actorsOne);
-
-            //// newClown.Cars.Add(car);
-
-            context.Set<Movie>().Add(bridesmaids);
-                
-            ////db.Set<Clown>().Add(newClown);
-            ////db.SaveChanges();
+            context.Movies.Add(weddingCrashers);
 
             await context.SaveChangesAsync();
         }

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.Json.Serialization;
-using System.Text.Json;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 using Wef.Movies.API.Data;
 using Wef.Movies.API.Domain;
 
@@ -14,16 +8,11 @@ namespace Wef.Movies.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MoviesController : ControllerBase
+    public class MoviesController : BaseCtrl
     {
         private readonly DataContext _context;
-        private readonly JsonSerializerOptions options = new()
-            {
-                ReferenceHandler = ReferenceHandler.IgnoreCycles,
-                WriteIndented = true
-            };
 
-    public MoviesController(DataContext context)
+        public MoviesController(DataContext context)
         {
             _context = context;
         }
@@ -44,7 +33,11 @@ namespace Wef.Movies.API.Controllers
             return Ok(JsonSerializer.Serialize(movies, options));
         }
 
-        // GET: api/Movies/5
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="partial"></param>
+        /// <returns></returns>
         [HttpGet("{partial}")]
         public async Task<ActionResult<List<Movie>>> GetMoviesByPartialTitle(string partial)
         {
@@ -54,7 +47,7 @@ namespace Wef.Movies.API.Controllers
             }
 
             var movies = await _context.Movies
-                .Where(s => s.Title.ToLowerInvariant().Contains(partial))
+                .Where(s => s.Title.ToLowerInvariant().Contains(partial.ToLowerInvariant()))
                 .Include(s => s.Actors)
                 .ToListAsync();
 
